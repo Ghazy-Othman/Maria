@@ -42,7 +42,7 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
         console.log("User Sign up : ", result);
 
         // Redirect to home page if success
-        window.location.href = 'home.html';
+        window.location.href = 'index.html';
     }
     catch (err) {
         alert(err);
@@ -78,7 +78,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
         console.log("User Login ", result);
 
         // Redirect to home page if success
-        window.location.href = 'home.html';
+        window.location.href = 'index.html';
     }
     catch (err) {
         alert(err);
