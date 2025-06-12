@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="MAIN.CSS">
+    <style>
+        .ta {
+            background-color: #bca362;
+        }
+
+        .titletable {
+            font-style: italic;
+        }
+
+        #imgPur {
+            height: 100px;
+            width: 100px;
+        }
+
+        #shopping-basket {
+            margin-top: 10rem;
+            font-style: italic;
+            color: #af6b27;
+            padding: 30px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #pro {
+            width: 100%;
+        }
+
+        #pro table {
+            border-radius: 20px;
+        }
+
+
+        .titletable {
+            text-align: center;
+        }
+
+
+        .divshow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .p {
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div">
+        <nav class="na">
+            <img src="" alt="">
+            <a href="home.html">Home</a>
+            <a href="Purchases.html">Purchases</a>
+            <a href="About-Us.html">About-Us</a>
+        </nav>
+    </div>
+    <header align="center">
+        <h1 id="artext"> WELCOOM TO MARIA HONEY COMPANY</h1>
+    </header>
+    <div id="pro">
+
+
+        <h2 class="titletable"> Honey products</h2>
+        <hr>
+        <table border="3" class="table table-striped" style="width: 100%;">
+            <thead class="ta">
+                <tr>
+                    <th>Photo</th>
+                    <th>product</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Discount</th>
+                    <th>Quantity</th>
+                    <th>Final Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="items_list">
+            </tbody>
+        </table>
+        <hr>
+    </div>
+    <!-- Shopping basket and checkout form -->
+    <div id="shopping-basket" style="display: none;">
+        <div class="sho">
+            <h2> Shopping cart</h2>
+            <h3>Total bill : <span id="total-amount">0</span> S.P</h3>
+
+            <form id="checkout-form">
+                <label for="customer-name">Name:</label>
+                <input type="text" id="customer-name" value="" name="customer-name" readonly><br>
+
+                <label for="customer-address">Address:</label>
+                <textarea id="customer-address" name="customer-address" required></textarea><br>
+
+                <label for="payment-method"> payment-method:</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="cash-on-delivery">Cash on delivery </option>
+                </select><br>
+                <p>*New payment methods soon...</p>
+                <hr>
+
+                <button type="submit"> Complete the Purchase</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.js"></script>
+
+    <script src="sc.js"></script>
+    <script type="module" src="./js/user_cart.js"></script>
+
+</body>
+
+</html>

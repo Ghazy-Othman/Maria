@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Maria Honey Company</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fff7e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #b37400;
+            text-shadow: 1px 1px #ffe0b2;
+        }
+
+        .form-container {
+            background: #fff3cd;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            position: relative;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .tabs button {
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 5px 10px;
+            color: #b37400;
+        }
+
+        .tabs button.active {
+            border-bottom: 2px solid #b37400;
+        }
+
+        form {
+            display: none;
+            flex-direction: column;
+        }
+
+        form.active {
+            display: flex;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="file"] {
+            margin-bottom: 12px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        button[type="submit"] {
+            background: #b37400;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button[type="submit"]:hover {
+            background: #a15e00;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>WELCOME TO MARIA HONEY COMPANY</h1>
+
+    <div class="form-container">
+        <div class="tabs">
+            <button id="showSignUp" class="active">Sign Up</button>
+            <button id="showLogin">Login</button>
+        </div>
+
+        <!-- Sign Up Form -->
+        <form id="signUpForm" class="active">
+            <input type="text" id="user_name" placeholder="Name" required>
+            <input type="email" id="user_email_signup" placeholder="Email" required>
+            <input type="password" id="password_signup" placeholder="Password" required>
+            <input type="file" id="profile_image" accept="image/*">
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <!-- Login Form -->
+        <form id="loginForm">
+            <input type="email" id="user_email_login" placeholder="Email" required>
+            <input type="password" id="password_login" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        const signUpBtn = document.getElementById("showSignUp");
+        const loginBtn = document.getElementById("showLogin");
+        const signUpForm = document.getElementById("signUpForm");
+        const loginForm = document.getElementById("loginForm");
+
+        signUpBtn.onclick = () => {
+            signUpForm.classList.add("active");
+            loginForm.classList.remove("active");
+            signUpBtn.classList.add("active");
+            loginBtn.classList.remove("active");
+        };
+
+        loginBtn.onclick = () => {
+            loginForm.classList.add("active");
+            signUpForm.classList.remove("active");
+            loginBtn.classList.add("active");
+            signUpBtn.classList.remove("active");
+        };
+    </script>
+    <script type="module" src="js/login_signup.js"></script>
+
+</body>
+
+</html>

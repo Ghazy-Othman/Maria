@@ -1,0 +1,102 @@
+/* Home page*/
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(242, 242, 179);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+nav a {
+    text-decoration: none;
+    text-transform: capitalize;
+
+}
+
+.na {
+    text-align: center;
+
+}
+
+.div {
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(174, 174, 26);
+    word-spacing: 100px;
+
+}
+
+#artext {
+    background: linear-gradient(to right, brown, orange, green, yellow);
+    background-clip: text;
+    display: inline;
+    color: transparent;
+    animation: animated 1s linear infinite;
+}
+
+@keyframes animated {
+    to {
+        background-position: 161px;
+    }
+}
+
+.ho {
+    background-color: rgb(230, 251, 139);
+    height: 50px;
+    text-align: center;
+}
+
+.box img {
+    height: 300px;
+    width: 300px;
+    transform: scale(0.99);
+
+}
+
+.discrption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: rgb(225, 241, 135);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.box:hover .discrption {
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 1;
+}
+
+.discrption2 {
+    margin: 10px 0 0;
+    color: black;
+    line-height: 7;
+    font-size: large;
+}
+
+.far {
+    background-color: white;
+    height: 5px;
+}
+
+#intro2 {
+    background-color: rgb(161, 155, 64);
+    height: 300px;
+    text-align: left;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#intro2 img {
+    margin-right: 10px;
+    height: 300px;
+    border-radius: 50%;
+
+}

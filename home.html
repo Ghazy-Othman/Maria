@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <title>Document</title>
+  <link rel="stylesheet" href="MAIN.CSS">
+  <style>
+    .fl {
+      display: flex;
+      transform: scale(0.9);
+    }
+
+    .fl .pricing {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #ebeef1;
+      border-radius: 99em 0 0 99em;
+      display: flex;
+      align-items: center;
+      padding: 0.625em 0.75em;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #040405;
+    }
+
+    .fl .pricing small {
+      color: #707a91;
+      font-size: 0.75em;
+      margin-left: 0.25em;
+    }
+
+    .box {
+      width: 400px;
+      height: 400px;
+      background-color: rgb(228, 237, 127);
+      margin: 70px;
+      position: relative;
+      justify-content: center;
+      overflow: hidden;
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+      border-radius: 40px 20px;
+
+    }
+
+    .box:hover {
+      transform: rotate(-5deg) scale(1.1);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .box:hover svg {
+      scale: 0;
+      transform: rotate(-45deg);
+    }
+
+    #mari {
+      background-color: white;
+      line-height: 8;
+      width: 200px;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      padding: 0.5em;
+    }
+
+    #aiChatBtn {
+      position: fixed;
+      bottom: 80px;
+      right: 30px;
+      background-color: #ffcc00;
+      color: black;
+      border: none;
+      padding: 14px 18px;
+      font-size: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+    }
+
+    #aiChatBtn:hover {
+      background-color: #e6b800;
+    }
+
+    #aiChatBox {
+      position: fixed;
+      top: 0;
+      right: -400px;
+      width: 400px;
+      height: 100%;
+      background-color: #fff;
+      box-shadow: -3px 0 8px rgba(0, 0, 0, 0.2);
+      transition: right 0.3s ease-in-out;
+      z-index: 998;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #aiChatBox.active {
+      right: 0;
+    }
+
+    #aiChatHeader {
+      background-color: #fdd835;
+      padding: 1em;
+      font-weight: bold;
+      font-size: 1.2em;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+    }
+
+    #aiChatMessages {
+      flex: 1;
+      padding: 1em;
+      overflow-y: auto;
+      font-family: sans-serif;
+      font-size: 0.9em;
+    }
+
+    #aiChatInput {
+      display: flex;
+      border-top: 1px solid #ccc;
+    }
+
+    #aiInput {
+      flex: 1;
+      padding: 0.75em;
+      border: none;
+      font-size: 1em;
+    }
+
+    #aiSend {
+      background-color: #fdd835;
+      border: none;
+      padding: 0 1em;
+      cursor: pointer;
+    }
+
+    #adminBtn {
+      position: fixed;
+      bottom: 80px;
+      left: 30px;
+      background-color: #ffcc00;
+      color: black;
+      border: none;
+      padding: 14px 18px;
+      font-size: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+    }
+
+    #adminBtn:hover {
+      background-color: #e6b800;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="div">
+    <nav class="na">
+      <img src="" alt="">
+      <a href="home.html">Home</a>
+      <a href="Purchases.html">Purchases</a>
+      <a href="About-Us.html">About-Us</a>
+      <!-- <a href="dashboard.html" id="dashboard" style="display: none;">Dashboard</a> -->
+      <a href="login_signup.html" title="Login / Sign Up" style="margin-left:auto; font-size: 1.2rem;">Signup</a>
+    </nav>
+  </div>
+  <header align="center">
+    <h1 id="artext"> WELCOOM TO MARIA HONEY COMPANY</h1>
+  </header>
+  <div class="ho">
+    Our website aims to provide comprehensive and accurate information
+    about honey bees and honey production,with a focus on enhancing public knowledge
+    and increasing awareness of the importance of bees in the environment.
+    The website provides multiple benefits to various interested groups</div>
+
+  <div id="products_list"> </div>
+
+  <button id="aiChatBtn" title="Chat with AI 🤖">🤖</button>
+
+  <div id="aiChatBox">
+    <div id="aiChatHeader">Maria Honey AI Assistant</div>
+    <div id="aiChatMessages">
+      <p><strong>AI:</strong> Hi! How can I assist you today?</p>
+    </div>
+    <div id="aiChatInput">
+      <input type="text" id="aiInput" placeholder="Type your message..." />
+      <button id="aiSend">Send</button>
+    </div>
+  </div>
+
+  <button id="adminBtn" title="Admin Dashboard" style="display: none;">
+    🛠️
+  </button>
+
+
+  <footer style="position:fixed; bottom:0; height:auto; margin-top:40px;
+            width:100%; text-align:center;
+  text-align: center; padding: 1em; background: #f5f5f5; color: #333;">
+    All rights reserved to <strong>Maria Honey Company</strong> &copy; 2025
+  </footer>
+
+  <script src="sc.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script type="module" src="./js/home.js"></script>
+  <script type="module" src="./js/chat.js"></script>
+
+</body>
+
+</html>
