@@ -75,6 +75,7 @@ window.remove_product = async function (product_id) {
 
 //
 let cart_items = [];
+let total_price = 0 ;
 async function showCart() {
     try {
         const result = await showUserCart();
@@ -84,8 +85,10 @@ async function showCart() {
             const items_list = document.getElementById('items_list');
             //
             console.log(cart_items);
+
             //
             cart_items.forEach(element => {
+                total_price += element.price ;
                 items_list.insertAdjacentHTML('beforeend', `<tr>
                     <td><img id="imgPur" src="${element.product.product_image}" alt=" "></td>
                     <td> ${element.product.product_name}</td>
@@ -124,6 +127,7 @@ async function showCompletePurchaseForm() {
         document.getElementById('shopping-basket').style.display = 'block';
     }
     document.getElementById('customer-name').value = localStorage.getItem("user_name");
+    document.getElementById('total-amount').value = total_price;
 }
 
 showCompletePurchaseForm();
