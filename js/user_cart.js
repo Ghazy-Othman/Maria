@@ -127,7 +127,7 @@ async function showCompletePurchaseForm() {
         document.getElementById('shopping-basket').style.display = 'block';
     }
     document.getElementById('customer-name').value = localStorage.getItem("user_name");
-    document.getElementById('total-amount').value = total_price;
+    document.getElementById('total-amount').insertAdjacentText('beforebegin',`${total_price}`);
 }
 
 showCompletePurchaseForm();
